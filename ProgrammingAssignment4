@@ -1,0 +1,166 @@
+// this sets the background color of the master UIView (when there are no windows/tab groups on it)
+Titanium.UI.setBackgroundColor('#9f9d9d');
+var win1 = Titanium.UI.createWindow({  
+    title:'Profile',
+});
+var WinView = Ti.UI.createView({
+	top:0,
+	width: '100%',
+	height: '100%',
+	backgroundColor: '#9f9d9d',
+});
+
+
+
+var TitleView = Ti.UI.createView({
+	top: '3.1%',
+	backgroundColor: '#FFFFFF',
+	height:'17%',
+	width: '100%',
+});
+
+win1.add(TitleView);
+
+var label1 = Titanium.UI.createLabel({
+color:'black',
+text:'Craig Patrick',
+font:{fontSize:24,fontWeight:'Bold',fontFamily:'Sans Serif'},
+textAlign:'center',
+top:'9%',
+width:'auto'
+});
+
+win1.add(label1);
+
+var profpic = Ti.UI.createImageView({
+image:'/images/IMG_1571.jpg',
+top:'25%',
+height:'25%',
+width:'30%',
+imageAlign:'center'
+});
+
+var profpic2 = Ti.UI.createImageView({
+image:'/images/IMG_1571.jpg',
+top:'25%',
+height:'25%',
+width:'30%',
+imageAlign:'center'
+});
+
+var idahoseal = Ti.UI.createImageView({
+	image: '/images/UI_Seal_gold.png',
+	top:'7%',
+	width:'19%',
+	height: '10%',
+	left:'3%'
+});
+win1.add(idahoseal);
+win1.add(profpic);
+
+var hplogo = Ti.UI.createImageView({
+	image: '/images/hplogo_normal.jpg',
+	top:'7%',
+	width:'19%',
+	height: '10%',
+	left:'3%'
+});
+
+
+var collegeprofile = Titanium.UI.createLabel({
+text:'\nCollegiate Profile \nSchool: University of Idaho \nMajor: Economics \nGPA: 3.61 \nGraduation: Spring 2015 \nPhone: (208)830-2400 \nEmail: patr9379@vandals.uidaho.edu',
+color:'black',
+font:{fontSize:14,fontWeight:'bold',fontFamily:'Sans Serif'},
+textAlign:'center',
+top:'55%',
+});
+
+win1.add(collegeprofile);
+
+var nav1 = Ti.UI.createButton({
+title:'Professional',
+color:'black',
+font:{fontSize:16,fontWeight:'bold',fontFamily:'Sans Serif'},
+textAlign:'center',
+width:'30%',
+top:'90%',
+backgroundColor: '#FFFFFF'
+});
+
+win1.add(nav1);
+
+nav1.addEventListener('click', function() {
+win2.open();
+});
+
+
+
+var win2 = Titanium.UI.createWindow({  
+    title:'Portfolio',
+    backgroundColor:'#0096D6'
+});
+
+var TitleView2 = Ti.UI.createView({
+	top: '3.1%',
+	backgroundColor: '#FFFFFF',
+	height:'17%',
+	width: '100%',
+});
+
+win2.add(TitleView2);
+
+var labelwin2 = Titanium.UI.createLabel({
+color:'#0096D6',
+text:'Craig Patrick',
+font:{fontSize:24,fontWeight:'Bold',fontFamily:'Sans Serif'},
+textAlign:'center',
+top:'9%',
+width:'auto'
+});
+
+win2.add(labelwin2);
+
+var profprofile = Titanium.UI.createLabel({
+text:'Professional Profile \nTitle: Business Analyst \nCompany: HP \nLocation: Boise, Idaho \n Start Date: June 1, 2015',
+color:'#FFFFFF',
+font:{fontSize:14,fontWeight:'bold',fontFamily:'Sans Serif'},
+textAlign:'center',
+top:'55%',
+left: '10%',
+right: '10%'
+});
+
+var profblurb =Titanium.UI.createLabel({
+	text:'After graduation, Craig will begin working for HP in Boise, Idaho starting June 1, 2015. He is also looking forward to getting his new dog, a bernedoodle named Kona, at the end of June.',
+	color:'#FFFFFF',
+	font:{fontSize:12,fontWeight:'bold',fontFamily:'Sans Serif'},
+	textAlign:'center',
+	top:'72%',
+	left: '10%',
+	right: '10%'
+});
+win2.add(profprofile);
+win2.add(profblurb);
+
+var nav2 = Ti.UI.createButton({
+title:'Collegiate',
+color:'#0096D6',
+font:{fontSize:16,fontWeight:'bold',fontFamily:'Sans Serif'},
+textAlign:'center',
+width:'30%',
+top:'90%',
+backgroundColor:'#FFFFFF',
+});
+
+win2.add(nav2);
+
+nav2.addEventListener('click', function() {
+Ti.API.info('Clicked Home Button');
+win2.close();
+});
+
+
+win1.open();
+win2.add(hplogo);
+win2.add(profpic2);
+win1.add(profpic);
